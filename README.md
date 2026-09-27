@@ -1,60 +1,93 @@
-# AI Checkers Engine & Move Evaluator
+# AI Checkers Engine & Move Evaluator 🏁
 
-Building AI course project
+[![Building AI - Honors](https://img.shields.io/badge/Building_AI-Advanced_Track_(Honors)-success?style=flat-square&logo=academia)](https://github.com/Machine4321/building-ai-project)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python)](https://python.org)
+[![Live Platform](https://img.shields.io/badge/Live_Web_App-nextcheckersmove.com-orange?style=flat-square&logo=google-chrome)](https://nextcheckersmove.com)
+[![Google Play](https://img.shields.io/badge/Google_Play-Android_App-green?style=flat-square&logo=google-play)](https://nextcheckersmove.com)
 
-## Summary
+**Capstone Project for University of Helsinki & MinnaLearn — Building AI (Advanced Track with Honors)**  
+*Author:* **Mikko Palovuori** ([github.com/Machine4321](https://github.com/Machine4321))
 
-This project develops an intelligent AI engine for Checkers and board games, combining heuristic search with machine learning state evaluation to provide real-time optimal move predictions, blunder detection, and interactive game analysis.
+---
 
-## Background
+## 📌 Summary
 
-Board games like Checkers are classic domains for exploring decision-making and artificial intelligence:
-* Many amateur players make subtle positional errors without understanding why they lost.
-* Full-depth minimax search can be computationally expensive on client-side web and mobile devices.
-* My personal motivation is to bridge game theory and accessible machine learning by building interactive solvers that run seamlessly anywhere.
+This project develops an intelligent AI engine for board games and Checkers, combining heuristic search with machine learning state evaluation to provide **real-time optimal move predictions, blunder detection, and interactive game analysis**. 
 
-## How is it used?
+The architecture conceptualized and prototyped in this project serves as the computational foundation for the production web platform and Android application deployed at **[nextcheckersmove.com](https://nextcheckersmove.com)**.
 
-The AI engine runs in the browser and mobile apps to provide instant game assistance:
-* Players input or snap their current board position.
-* The system evaluates candidate moves and ranks them by probability of winning.
-* Explanations highlight tactical traps and suggest the highest-value sequence.
+---
 
-`python
-def evaluate_move(board_state, weights):
-    # Linear combination of positional features and piece advantages
-    features = extract_features(board_state)
-    score = sum(w * f for w, f in zip(weights, features))
-    return score
-`
+## 🎯 Background & Motivation
 
-## Data sources and AI methods
+Board games like Checkers are classic testbeds for decision-making, game theory, and search tree optimization:
+* **Tactical Complexity:** Many amateur and club players make subtle positional errors without understanding the long-term strategic penalty.
+* **Client-Side Latency:** Exhaustive minimax search trees quickly explode in complexity ($O(b^d)$); running high-depth analysis on client-side web browsers or mobile devices requires efficient pruning and optimized state evaluation.
+* **Goal:** Bridge classical heuristic game theory with modern machine learning to build an accessible, instantaneous move evaluator and blunder detector.
 
-The project leverages self-play game datasets and standard endgame tablebases:
-* Supervised classification for positional evaluation.
-* Minimax with alpha-beta pruning for tactical decision lookahead.
-* Evaluation weights tuned through simulated annealing and linear regression.
+---
 
-| Component | Technique |
-| --- | --- |
-| Move Search | Alpha-Beta Minimax |
-| Positional Evaluation | Supervised Linear / NN Model |
-| Optimization | Simulated Annealing |
+## ⚙️ Architecture & AI Methods
 
-## Challenges
+The engine combines tree-search lookahead with trained positional weights:
 
-What this project does not solve:
-* It does not solve international 10x10 draughts (currently focused on standard 8x8 checkers).
-* Real-time search depth is constrained by mobile hardware performance.
+```
+[ Board State Input ]
+         │
+         ▼
+[ Legal Moves Generator ] ──► [ Transposition Table / Cache ]
+         │
+         ▼
+[ Minimax Search (Alpha-Beta Pruning) ]
+         │
+         ▼
+[ Positional State Evaluator ] ◄── [ Feature Weights (Tuned via Simulated Annealing) ]
+         │
+         ▼
+[ Ranked Moves & Blunder Analysis ]
+```
 
-## What next?
+### Key AI Components:
 
-Future expansions include:
-* Deep reinforcement learning using Monte Carlo Tree Search (MCTS).
-* Multi-variant board game support (Connect Four, Chess endgame).
-* Automated natural-language blunder commentary.
+| Component | AI & Algorithmic Technique | Purpose |
+| :--- | :--- | :--- |
+| **Move Search Engine** | **Minimax with Alpha-Beta Pruning** | Explores candidate moves while pruning provably suboptimal branches. |
+| **Heuristic Evaluation** | **Linear Weight Model / Positional Scoring** | Scores piece advantages, king safety, center control, and runaway pawns. |
+| **Weight Optimization** | **Simulated Annealing & Regression** | Optimizes heuristic coefficient vectors against historical match databases. |
+| **Game Search Cache** | **Zobrist Hashing / Transposition Tables** | Eliminates redundant calculations across recurring game states. |
 
-## Acknowledgments
+### Evaluation Heuristic Example:
 
-* Building AI course by University of Helsinki & Reaktor
-* Python scientific computing ecosystem (NumPy, Scikit-learn)
+```python
+def evaluate_board_state(board, weights):
+    """
+    Computes a linear evaluation score for a given board position.
+    Positive values favor Player 1; negative values favor Player 2.
+    """
+    features = extract_positional_features(board)
+    # Features include: piece count, kings, center control, mobility, back-rank protection
+    return sum(w * f for w, f in zip(weights, features))
+```
+
+---
+
+## 📱 Real-World Deployment
+
+This project was actively extended from an academic design into a production commercial application:
+* 🌐 **Web Platform:** [nextcheckersmove.com](https://nextcheckersmove.com)
+* 📲 **Android App:** Published on the Google Play Store for instant mobile board analysis.
+
+---
+
+## 🚀 Future Roadmap
+
+* Deep reinforcement learning using Monte Carlo Tree Search (MCTS) inspired by AlphaZero.
+* Automated natural-language blunder commentary using large language model (LLM) APIs.
+* Expansion into related state-space games (Connect Four, Reversi / Othello).
+
+---
+
+## 📜 Acknowledgments & License
+
+* Developed as part of the **Building AI** course by the **University of Helsinki** & **MinnaLearn**.
+* Built with Python, NumPy, and Scikit-learn.
