@@ -6,7 +6,7 @@
 [![Google Play](https://img.shields.io/badge/Google_Play-Android_App-green?style=flat-square&logo=google-play)](https://nextcheckersmove.com)
 
 **Capstone Project for University of Helsinki & MinnaLearn — Building AI (Advanced Track with Honors)**  
-*Author:* **Mikko Palovuori** ([github.com/Machine4321](https://github.com/Machine4321))
+*Author:* **Machine4321** ([github.com/Machine4321](https://github.com/Machine4321))
 
 ---
 
