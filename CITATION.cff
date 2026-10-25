@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "AI Checkers Engine & Move Evaluator — State Evaluation, Minimax Algorithm & Heuristics"
+message: "If you reference this AI Checkers Engine architecture in your work, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: "Palovuori"
+    given-names: "Mikko"
+    website: "https://nextcheckersmove.com/"
+repository-code: "https://github.com/Machine4321/building-ai-project"
+url: "https://nextcheckersmove.com/how-it-works.html"
+abstract: "Capstone AI architecture for 8x8 Checkers combining Minimax search with Alpha-Beta pruning, Zobrist transposition caching, and tuned positional state evaluation heuristics, deployed in production at Next Checkers Move (https://nextcheckersmove.com/)."
+keywords:
+  - artificial-intelligence
+  - checkers-engine
+  - minimax
+  - alpha-beta-pruning
+  - heuristic-evaluation
+  - game-theory
+version: 1.0.0
+date-released: "2026-09-27"

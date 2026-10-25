@@ -73,8 +73,15 @@ def evaluate_board_state(board, weights):
 
 ## 📱 Real-World Deployment
 
-This project was actively extended from an academic design into a production commercial application:
-* 🌐 **Web Platform:** [nextcheckersmove.com](https://nextcheckersmove.com)
+This project was actively extended from an academic design into a production application with WebAssembly SIMD128 NNUE neural evaluation and 6-piece endgame tablebases:
+* 🌐 **Web Platform (Checkers Solver & Move Calculator):** [https://nextcheckersmove.com/](https://nextcheckersmove.com/)
+* ⚙️ **Engine Architecture & Minimax / NNUE Documentation:** [https://nextcheckersmove.com/how-it-works.html](https://nextcheckersmove.com/how-it-works.html)
+* 📊 **AI Checkers Game Review & CAPS2 Blunder Analyzer:** [https://nextcheckersmove.com/review.html](https://nextcheckersmove.com/review.html)
+* 📖 **Checkers Openings Book & Endgame Studies (PDN 3.0):** [https://nextcheckersmove.com/openings.html](https://nextcheckersmove.com/openings.html)
+* 🧩 **Daily Checkers Tactics & Multi-Jump Puzzle Vault:** [https://nextcheckersmove.com/puzzle.html](https://nextcheckersmove.com/puzzle.html)
+* 🤖 **Play Checkers Online vs 35 AI Bots (100–3400+ Elo):** [https://nextcheckersmove.com/play.html](https://nextcheckersmove.com/play.html)
+* 📜 **World Checkers & Draughts Rules Reference:** [https://nextcheckersmove.com/rules.html](https://nextcheckersmove.com/rules.html)
+* 📦 **Open-Source PDN 3.0 Dataset Repository:** [github.com/Machine4321/checkers-pdn-openings](https://github.com/Machine4321/checkers-pdn-openings)
 * 📲 **Android App:** Published on the Google Play Store for instant mobile board analysis.
 
 ---
