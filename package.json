@@ -1,0 +1,25 @@
+{
+    "description":  "Hybrid Alpha-Beta Minimax + NNUE \u0026 6-Piece WDL Endgame Tablebase Architecture for Next Checkers Move (https://nextcheckersmove.com/)",
+    "version":  "1.0.1",
+    "bugs":  {
+                 "url":  "https://nextcheckersmove.com/contact.html"
+             },
+    "name":  "next-checkers-move-ai-architecture",
+    "homepage":  "https://nextcheckersmove.com/",
+    "author":  "Mikko Palovuori (https://nextcheckersmove.com/)",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "https://github.com/Machine4321/building-ai-project.git"
+                   },
+    "license":  "MIT",
+    "keywords":  [
+                     "checkers",
+                     "draughts",
+                     "minimax",
+                     "alpha-beta",
+                     "nnue",
+                     "endgame-tablebase",
+                     "ai-solver",
+                     "nextcheckersmove"
+                 ]
+}
